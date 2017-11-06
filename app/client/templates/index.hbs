@@ -1,0 +1,66 @@
+<section class="content-6 v-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Sample Vote Application</h3>
+
+        <div class="lead">
+          {{question}}&nbsp;?
+        </div>
+        <div>
+          <div {{bind-attr class=":poll-choices resultsHidden::hidden"}}>
+            {{#each choices}}
+              <div class="row">
+                <div class="col-md-6">
+                  <button class="btn btn-info pull-right" {{action 'vote' id}}>
+                    <h4>{{text}}</h4>
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <p>
+                    {{description}}
+                  </p>
+                </div>
+              </div>
+              <br/>
+            {{/each}}
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <button class="btn btn-link" {{action 'showResults'}}>Show results
+                  <i class="fa fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div {{bind-attr class="poll-results resultsHidden:hidden"}}>
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2 text-center">
+                  {{#each pollChoices}}
+                    <div class="progress">
+                      {{progress-bar text=text percent=vote-percent}}
+                    </div>
+                  {{/each}}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h4>Total Voted: {{totalVotes}}</h4>
+              </div>
+            </div>    
+            
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <button class="btn btn-link" {{action 'hideResults'}}>
+                  <i class="fa fa-arrow-left"></i>
+                  Back
+                </button>
+              </div>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

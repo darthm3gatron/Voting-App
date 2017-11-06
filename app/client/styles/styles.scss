@@ -1,0 +1,9 @@
+$icon-font-path: "../fonts/";
+
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+
+@import "font-awesome/scss/font-awesome.scss";
+
+@import "reset";
+@import "pages/home";
+@import "layout/footer";
